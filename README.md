@@ -1,6 +1,9 @@
 # Intro
 
-A simple API server using FastAPI for serving a small and high quality flow classification model onnxruntime only for CPU inference on Google Cloud Run.
+A simple API server using FastAPI for serving two small flow classification models onnxruntime only for CPU inference on Google Cloud Run.
+
+This example uses two models that classify the agents and users dialog. The models classify actions and/or responses that are independent from the primary objective of the conversation (e.g. goodbye, agent mistakes, apologies, etc.). 
+
 
 # Install from source
 ```bash
@@ -43,6 +46,35 @@ docker push gcr.io/flow-cloudrun/flowml
 gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image gcr.io/flow-cloudrun/flowml --service-account yourservice-account --allow-unauthenticated
 ```
 
+# Example usage
+
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:9612/flow' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "messages": [
+    {
+      "text": "My apologies",
+      "speaker": "agent"
+    },
+{
+      "text": "That is fine, can you expand on that list",
+      "speaker": "user"
+    }
+  ]
+}'
+```
+
+And returns
+
+```json
+[
+  "agent_apology_error_mistake",
+  "more_listing_or_expand"
+]
+```
 
 
 
