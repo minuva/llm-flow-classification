@@ -40,7 +40,7 @@ gcloud projects create flow-cloudrun
 gcloud config set project flow-cloudrun
 docker build --tag gcr.io/flow-cloudrun/flowml .
 docker push gcr.io/flow-cloudrun/flowml
-gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image gcr.io/forecasthub/flowml --service-account yourservice account --allow-unauthenticated
+gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image gcr.io/flow-cloudrun/flowml --service-account yourservice account --allow-unauthenticated
 ```
 
 
