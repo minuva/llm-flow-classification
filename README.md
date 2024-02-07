@@ -1,8 +1,8 @@
 # Intro
 
-A simple API server using FastAPI for serving two small flow classification models onnxruntime only for CPU inference on Google Cloud Run.
+A simple API server using FastAPI for serving two small flow classification models with onnxruntime package for CPU inference on Google Cloud Run.
 
-This example uses two models that classify the agents and users dialog. The models classify actions and/or responses that are independent from the primary objective of the conversation (e.g. goodbye, agent mistakes, apologies, etc.). 
+This example uses two models that classify the agents and users dialog. The models identify common events and patterns within the conversation flow. Such events include an apology, where the agent acknowledges a mistake, and a complaint, when a user expresses dissatisfaction.
 
 
 # Install from source
