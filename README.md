@@ -4,7 +4,7 @@ A simple API server using FastAPI for serving a small and high quality flow clas
 
 # Install from source
 ```bash
-git clone https://github.com/minuva/flow-cloudrun.git.git
+git clone https://github.com/minuva/flow-cloudrun.git
 cd flow-cloudrun.git
 pip install -r requirements.txt
 ```
