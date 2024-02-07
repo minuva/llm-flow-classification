@@ -33,14 +33,14 @@ docker run -p 9612:9612 -it flow
 
 # Deploy to cloun Run
 
-The following commands will deploy the model to Google Cloud Run.
+The following commands will deploy the model to Google Cloud Run:
 
 ```bash
 gcloud projects create flow-cloudrun
 gcloud config set project flow-cloudrun
 docker build --tag gcr.io/flow-cloudrun/flowml .
 docker push gcr.io/flow-cloudrun/flowml
-gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image gcr.io/flow-cloudrun/flowml --service-account yourservice account --allow-unauthenticated
+gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image gcr.io/flow-cloudrun/flowml --service-account yourservice-account --allow-unauthenticated
 ```
 
 
@@ -50,5 +50,5 @@ gcloud run deploy flow-ml-app --platform managed --region europe-west3 --image g
 
 | Model | 
 | --- |
-| [minuva/MiniLMv2-toxic-jigsaw](https://huggingface.co/minuva/MiniLM-L6-toxic-all-labels)
-| [minuva/MiniLMv2-toxic-jigsaw-onnx](https://huggingface.co/Ngit/MiniLM-L6-toxic-all-labels-onnx)
+| [minuva/MiniLMv2-agentflow-v2-onnx](https://huggingface.co/minuva/MiniLMv2-agentflow-v2-onnx)
+| [minuva/MiniLMv2-userflow-v2-onnx](https://huggingface.co/minuva/MiniLMv2-userflow-v2-onnx)
