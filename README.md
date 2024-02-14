@@ -1,4 +1,4 @@
-# Intro
+# LLM conversation flow classification
 
 An efficient open-source LLM conversation flow classification system built on FastAPI. It uses two models to identify common events and patterns within the user interactions with LLMs. For example, to identify an apology where the agent acknowledges a mistake, or a complaint when a user expresses dissatisfaction. The labels can be used as building blocks for advanced LLM analytics. 
 
