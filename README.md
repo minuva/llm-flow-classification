@@ -1,8 +1,8 @@
-# LLM conversation flow classification
+# LLM conversation flow classification 💬
 
-An efficient open-source LLM conversation flow classification system built on FastAPI. It uses two models to identify common events and patterns within the user interactions with LLMs. For example, to identify an apology where the agent acknowledges a mistake, or a complaint when a user expresses dissatisfaction. The labels can be used as building blocks for advanced LLM analytics. 
+An effective open-source system for classifying conversation flows in large language models (LLMs) using FastAPI. This system incorporates two models to detect typical events and patterns in interactions with LLMs, such as recognizing an apology where the LLM admits a mistake, or identifying a complaint when a user shows dissatisfaction. These labels serve as foundational elements for sophisticated LLM analytics 📊.
 
-The models are optimized and run on onnx for fast CPU-based inference. This server can be deployed in serveless platforms. 
+The models have been optimized for rapid CPU-based inference using ONNX, enabling efficient performance ⚡. Furthermore, this system is designed for deployment on serverless platforms.
 
 # Install from source
 ```bash
