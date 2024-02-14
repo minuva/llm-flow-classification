@@ -1,14 +1,13 @@
 # Intro
 
-A simple API server using FastAPI for serving two small flow classification models with onnxruntime package for fast CPU inference.
+An efficient open-source LLM conversation flow classification system built on FastAPI. It uses two models to identify common events and patterns within the user interactions with LLMs. For example, to identify an apology where the agent acknowledges a mistake, or a complaint when a user expresses dissatisfaction. The labels can be used as building blocks for advanced LLM analytics. 
 
-This repository uses two models that classify the agents and users dialog. The models identify common events and patterns within the conversation flow. Such events include an apology, where the agent acknowledges a mistake, and a complaint, when a user expresses dissatisfaction.
-
+The models are optimized and run on onnx for fast CPU-based inference. This server can be deployed in serveless platforms. 
 
 # Install from source
 ```bash
-git clone https://github.com/minuva/flow-cloudrun.git
-cd flow-cloudrun.git
+git clone https://github.com/minuva/llm-flow-classification.git
+cd llm-flow-classification.git
 pip install -r requirements.txt
 ```
 
@@ -30,8 +29,8 @@ Check `config.py` for more configuration options.
 Run the following command to start the server (the root directory):
 
 ```bash
-docker build --tag flow .
-docker run -p 9612:9612 -it flow
+docker build --tag llmflow .
+docker run -p 9612:9612 -it llmflow
 ```
 
 # Example usage
