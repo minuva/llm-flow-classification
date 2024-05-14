@@ -37,32 +37,23 @@ docker run -p 9612:9612 -it llmflow
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:9612/flow' \
+  'http://127.0.0.1:9612/conversation_flow_plugin' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "messages": [
-    {
-      "text": "My apologies",
-      "speaker": "agent"
-    },
-{
-      "text": "That is fine, can you expand on that list",
-      "speaker": "user"
-    }
-  ]
+  "llm_input": "That is fine, can you expand on that list",
+  "llm_output": "My apologies."
 }'
 ```
-
 And returns
 
 ```json
-[
-  "agent_apology_error_mistake",
-  "more_listing_or_expand"
-]
-```
+{
+  "user_flow": "more_listing_or_expand",
+  "agent_flow": "agent_apology_error_mistake"
+}
 
+```
 
 
 # Models
