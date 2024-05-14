@@ -4,13 +4,14 @@ An effective open-source system for classifying conversation flows in large lang
 
 The models have been optimized for rapid CPU-based inference using ONNX, enabling efficient performance ⚡. Furthermore, this system is designed for deployment on serverless platforms.
 
+This project functions as the backend supporting the  [flowdetect-plugin](https://github.com/minuva/ph-flowdetect-plugin) designed for use with [PostHog-LLM](https://github.com/postlang/posthog-llm).
+
 # Install from source
 ```bash
 git clone https://github.com/minuva/llm-flow-classification.git
 cd llm-flow-classification.git
 pip install -r requirements.txt
 ```
-
 
 # Run locally
 
@@ -54,7 +55,6 @@ And returns
 }
 
 ```
-
 
 # Models
 
