@@ -4,13 +4,14 @@ An effective open-source system for classifying conversation flows in large lang
 
 The models have been optimized for rapid CPU-based inference using ONNX, enabling efficient performance ⚡. Furthermore, this system is designed for deployment on serverless platforms.
 
+This project functions as the backend supporting the  [flowdetect-plugin](https://github.com/minuva/ph-flowdetect-plugin) designed for use with [PostHog-LLM](https://github.com/postlang/posthog-llm).
+
 # Install from source
 ```bash
 git clone https://github.com/minuva/llm-flow-classification.git
 cd llm-flow-classification.git
 pip install -r requirements.txt
 ```
-
 
 # Run locally
 
@@ -37,33 +38,23 @@ docker run -p 9612:9612 -it llmflow
 
 ```bash
 curl -X 'POST' \
-  'http://127.0.0.1:9612/flow' \
+  'http://127.0.0.1:9612/conversation_flow_plugin' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "messages": [
-    {
-      "text": "My apologies",
-      "speaker": "agent"
-    },
-{
-      "text": "That is fine, can you expand on that list",
-      "speaker": "user"
-    }
-  ]
+  "llm_input": "That is fine, can you expand on that list",
+  "llm_output": "My apologies."
 }'
 ```
-
 And returns
 
 ```json
-[
-  "agent_apology_error_mistake",
-  "more_listing_or_expand"
-]
+{
+  "user_flow": "more_listing_or_expand",
+  "agent_flow": "agent_apology_error_mistake"
+}
+
 ```
-
-
 
 # Models
 
