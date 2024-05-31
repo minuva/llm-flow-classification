@@ -31,8 +31,10 @@ Run the following command to start the server (the root directory):
 
 ```bash
 docker build --tag llmflow .
-docker run -p 9612:9612 -it llmflow
+docker run --network=postlang --network-alias=flowdetect -p 9612:9612 -it llmflow
 ```
+The network and the network alias are used to allow PostHog-LLM to communicate with the flowdetect classification service.
+Since PostHog-LLM is running in a docker container, we connect the two services by adding them to the same network for *fast* and *reliable* communication.
 
 # Example usage
 
